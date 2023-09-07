@@ -31,10 +31,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         createdAt: {
           type: 'TIMESTAMP',
+          defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
           allowNull: false,
         },
         updatedAt: {
           type: 'TIMESTAMP',
+          defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
           allowNull: false,
         },
         is_delete: {
@@ -47,6 +49,9 @@ module.exports = (sequelize, DataTypes) => {
       });
 
 
+    User.associate = function(models) {
+        User.hasMany(models.Booking, {foreignKey: 'userid', sourceKey: 'id'});
+    };
     return User;
 }
 

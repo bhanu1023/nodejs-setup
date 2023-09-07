@@ -19,6 +19,8 @@ CREATE TABLE User (
 );
 
 
+
+
 INSERT INTO User (name, password, email, phone, address, role) VALUES ('admin', 'admin', 'test@email.com',
     '123456789', 'test address', 'admin');
 
