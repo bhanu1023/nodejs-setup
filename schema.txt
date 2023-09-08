@@ -1,0 +1,70 @@
+
+
+Shop
+    int id;
+    string name;
+    string address;
+    string pincode;
+
+
+Item
+    int id;
+    string name;
+    String description;
+    int mrp;
+
+Inventory
+    int id;
+    string name;
+    int shop_id;
+    int item_id;
+    int quantity;
+    int price;
+    itemStatus status // available, discontinued
+
+Customer
+    int id;
+    string name;
+    string email;
+    string password;
+    string address;
+    string pincode;
+
+
+Cart
+    int id;
+    int customer_id;
+    int total_amount;
+
+
+CartItem
+    int id;
+    int cart_id;
+    int shop_id;
+    int item_id;
+    int quantity;
+    int price;
+
+
+Order
+    int id;
+    int cart_id;
+    int shop_id;
+    int total_amount;
+    OrderStatus status; // pending, delivered, cancelled
+
+DeliveryPerson
+    int id;
+    string name;
+    string email;
+    string password;
+    string address;
+    string currentPincode;
+
+
+Delivery
+    int id;
+    int order_id;
+    int delivery_person_id;
+    string Orderaddress;
+    DeliveryStatus status; // pending, delivered, cancelled

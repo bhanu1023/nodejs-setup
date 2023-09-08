@@ -25,3 +25,18 @@ exports.userSchema = Joi.object().keys({
     .max(40)
     .required(),
 });
+
+exports.shopSearchSchema = Joi.object().keys({
+  customer_pincode: Joi.number().integer()
+    .min(1)
+    .max(20000)
+    .required(),
+  limit: Joi.number().integer()
+    .min(1)
+    .max(10)
+    .required(),
+  offset: Joi.number().integer()
+    .min(0)
+    .required(),
+
+});
